@@ -1,25 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Search = (props) => {
   const movies = props.movies;
+  
+  console.log(movies);
   return (
     <div className="searchwrap">
       <div className="Search">
-        <div className="popularmovies">
+        <div className="searchmovies">
           {movies?.map((movie) => (
-            <div className="popularmovie">
-              <Link to={`/${movie.id}`}>
-                <div className="popularimage">
+            <div className="searchmovie">
+                <div className="searchimage"  onClick={() => (
+    window.location.href=`/${movie.id}` )}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt=""
+                    alt="" 
                   />
                 </div>
-                <div className="popular">
+                {/* <div className="popular">
                   <h2>{movie.title}</h2>
-                </div>
-              </Link>
+                </div> */}
+
             </div>
           ))}
         </div>

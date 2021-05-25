@@ -41,10 +41,26 @@ body {
   height: auto;
   color: var(--text-color);
 }
+.moviesmain {
+  height: 100%;
+  width: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
 .movies {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 3rem;
+}
+.popularimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .popularimage img {
   height: 420px;
@@ -57,24 +73,13 @@ body {
   width: auto;
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
-  /* justify-content: center; */
   margin: 0 30px;
   position: relative;
   align-items: center;
   justify-content: center;
 }
 .popular {
-  height: auto;
-  width: 80px;
-  position: absolute;
-  bottom: 100px;
-  left: 40px;
-  background-color: rgb(245, 0, 49);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
+ color: var(--text-color);
 }
 .popularmovies {
   width: 100%;
@@ -85,22 +90,49 @@ body {
   justify-content: center;
 }
 .searchwrap {
-  height: 100vh;
-  width: 100vw;
-  background-color: blueviolet;
+  height: 100%;
+  width: 100%;
+  background-color: black;
   position: fixed;
   z-index: 1;
-  overflow: hidden;
+  overflow: scroll;
 }
 .Search {
+  margin: 60px 0px;
   position: relative;
   z-index: 2;
   overflow: scroll;
 }
+.searchmovie {
+  height: 500px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 0 30px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.searchmovies {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchimage img {
+  height: 420px;
+  width: auto;
+  border-radius: 15px;
+  box-shadow: 0px 4px 18px rgba(92, 89, 95, 0.5);
+}
 .explore {
   margin-top: 90px;
   display: flex;
-  width: 100%;
+  width: 100vw;
+  height: auto;
 }
 .explore h1 {
   color: var(--text-color);
@@ -138,19 +170,20 @@ body {
   justify-content: center;
   margin: 0 30px;
   position: relative;
+ 
 }
 .listmovies::-webkit-scrollbar-thumb {
   /* width:100px; */
   width: 5px;
-  background: rgb(0, 0, 177); 
+  background: rgb(0, 0, 177);
 }
 .listmovies::-webkit-scrollbar {
-   width: 0px;
-   height: 5px;
+  width: 0px;
+  height: 5px;
   background: transparent;
 }
 .listmovies {
-  width: 100%;
+  width: 100vw;
   height: auto;
   /* margin-left: 70px; */
   display: flex;
@@ -166,6 +199,16 @@ body {
   border-radius: 15px;
   box-shadow: 0px 4px 18px rgba(92, 89, 95, 0.5);
 }
+.populardetails {
+  display: flex;
+  margin-top: 60px;
+}
+.detailsimage {
+  margin-right: 40px;
+}
+.carousel .thumbs {
+  display: none;
+}
 @media screen and (max-width: 580px) {
   .movieimage img {
     height: 200px;
@@ -178,15 +221,15 @@ body {
     margin-bottom: 0px;
   }
   .listmovie {
-   height : 250px;
-   width: auto;
-   margin: 0 10px;
-  } 
+    height: 250px;
+    width: 100vw;
+    margin: 0 10px;
+  }
   /* .listmovies {
     width: 100%;
     height: auto;
     /* margin: 10px; */
-  
+
   .listimage img {
     height: 220px;
     width: auto;
@@ -196,18 +239,22 @@ body {
     padding-top: 0px;
   } */
   .explore h1 {
-  margin-left: 20px;
-  margin-bottom: 8px;
-  font-size: 25px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    font-size: 25px;
   }
   .next h3 {
     /* padding-bottom: px; */
     font-size: 15px;
   }
   .listmovies::-webkit-scrollbar {
-  display: none;
+    display: none;
   }
   .explore {
     margin-top: 5px;
   }
+  .Search {
+    margin-top: 15px;
+  }
+
 }

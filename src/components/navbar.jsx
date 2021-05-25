@@ -9,6 +9,7 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import { useState, useEffect, useCallback } from "react";
 import Search from "./search-results";
+// import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,10 +75,11 @@ export default function SearchAppBar() {
 
   const submit = (e) => {
     e.preventDefault();
-    setText("");
+    // window.location.href = "/search";
+    // <Link to="/search"></Link>;
   };
-console.log(submit);
-  console.log(text);
+  console.log(submit);
+  // console.log(text);
   const url = `https://api.themoviedb.org/3/search/movie?api_key=9937e01a0bed790196d656e18d30d9ad&language=en-US&query=${text}&page=1&include_adult=false`;
   const [movies, setMovies] = useState([]);
 
@@ -95,7 +97,14 @@ console.log(submit);
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="fixed" style={{backgroundColor: "blue"}}>
+        <AppBar
+          position="fixed"
+          style={{
+            backgroundColor: "transparent",
+            backdropFilter: "blur(7px)",
+          }}
+          elevation={0}
+        >
           <Toolbar>
             {/* <IconButton
               edge="start"
@@ -105,7 +114,11 @@ console.log(submit);
             >
               <MenuIcon />
             </IconButton> */}
-            <Typography className={classes.title} variant="h3" style={{width: "50%"}}>
+            <Typography
+              className={classes.title}
+              variant="h3"
+              style={{ width: "50%" }}
+            >
               Movies
             </Typography>
             <div className={classes.search} search>
@@ -121,18 +134,19 @@ console.log(submit);
                 inputProps={{ "aria-label": "search" }}
                 value={text}
                 onChange={(e) => setText(e.target.value)}
+                // onClick={() => (window.location.href = "/search")}
               />
             </div>
           </Toolbar>
         </AppBar>
+        {text !== "" ? (
+          <div className="">
+            <Search movies={movies} />
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
-      {text !== "" ? (
-        <div className="">
-          <Search movies={movies} />
-        </div>
-      ) : (
-        <></>
-      )}
     </>
   );
 }

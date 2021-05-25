@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Search from "./components/search-results";
+import Search from "./components/search-results";
 import Bigcard from "./components/movies-main-card";
 import Latest from "./components/latest-movie";
 import Details from "./components/movie-detail"
@@ -38,6 +38,10 @@ const ReactRouterSetup = () => {
         <Route exact path="/:id">
           <ButtonAppBar />
           <Details />
+        </Route>
+         <Route exact path="/search">
+          <ButtonAppBar />
+          <Search />
         </Route>
       </Switch>
     </Router>

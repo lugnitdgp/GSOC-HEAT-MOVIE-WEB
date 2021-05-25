@@ -31,33 +31,35 @@ const Latest = (props) => {
   }
   return (
     <>
-      <h1
-        style={{
-          color: "var(--text-color)",
-          marginLeft: "85px",
-          marginTop: "100px",
-          fontSize: "60px",
-        }}
-      >
-        {Heading}
-      </h1>
-      <div className="movies">
-        <div className="popularmovies">
-          {movies.map((movie) => (
-            <div className="popularmovie">
-              <Link to={`/${movie.id}`}>
-                <div className="popularimage">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt=""
-                  />
-                </div>
-                {/* <div className="popular">
-                <h2>{movie.title}</h2>
-              </div> */}
-              </Link>
-            </div>
-          ))}
+      <div className="moviesmain">
+        <h1
+          style={{
+            color: "var(--text-color)",
+            marginLeft: "85px",
+            marginTop: "100px",
+            fontSize: "60px",
+          }}
+        >
+          {Heading}
+        </h1>
+        <div className="movies">
+          <div className="popularmovies">
+            {movies.map((movie) => (
+              <div className="popularmovie">
+                <Link to={`/${movie.id}`} style={{ textDecoration: "none" }}>
+                  <div className="popularimage">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt=""
+                    />
+                  </div>
+                  <div className="popular">
+                    <h2>Rating {movie.vote_average}/10</h2>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
