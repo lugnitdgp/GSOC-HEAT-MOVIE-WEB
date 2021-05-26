@@ -54,6 +54,7 @@ const Details = () => {
           }
         }
       >
+        {/* <div className="" style={{ zIndex: 3 }}> */}
         <div className="populardetails">
           <div className="detailsimage">
             <img
@@ -95,25 +96,27 @@ const Details = () => {
             </div>
           </div>
         </div>
-
-        <div className="videos">
-          <h1>Trailer Videos</h1>
-          <div className="videoscroll">
-            <div className="video">
-              {video?.map((vid) => (
-                <iframe
-                  className="vid"
-                  src={`https://www.youtube.com/embed/${vid.key}`}
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              ))}
+        <div className="vide">
+          <div className="videos">
+            <h1>Trailer Videos</h1>
+            <div className="videoscroll">
+              <div className="video">
+                {video?.map((vid) => (
+                  <iframe
+                    className="vid"
+                    src={`https://www.youtube.com/embed/${vid.key}`}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 };
