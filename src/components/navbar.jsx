@@ -80,7 +80,7 @@ export default function SearchAppBar() {
   };
   console.log(submit);
   // console.log(text);
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=9937e01a0bed790196d656e18d30d9ad&language=en-US&query=${text}&page=1&include_adult=false`;
+  const url = `${process.env.REACT_APP_SEARCH_URL}${text}&page=1&include_adult=false`;
   const [movies, setMovies] = useState([]);
 
   const getMovies = useCallback(async () => {

@@ -7,13 +7,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 const Bigcard = () => {
-  const url = `https://api.themoviedb.org/3/movie/popular?api_key=9937e01a0bed790196d656e18d30d9ad&language=en-US&page=1`;
+  const url = `${process.env.REACT_APP_TRENDING_URL}`;
   const [movies, setMovies] = useState([]);
 
   const getMovies = useCallback(async () => {
     const response = await fetch(url);
     const movies = await response.json();
-    setMovies(movies.results.slice(0,5));
+    setMovies(movies.results.slice(0,10));
   }, [url]);
 
   useEffect(() => {
@@ -38,12 +38,12 @@ const Bigcard = () => {
   )}/> ))}
     
       </div> */}
-      <Carousel autoPlay="true" infiniteLoop="true" dynamicHeight="false" >
+      <Carousel autoPlay="true" autoStart="true" infiniteLoop="true" dynamicHeight="false" >
            {movies?.map((movie) => (
              <div onClick={() => (
-    window.location.href=`/${movie.id}` )}>
-  <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt="" 
-  style={{height: "70vh"}}/>
+    window.location.href=`/${movie.id}` )} >
+  <img src={`${process.env.REACT_APP_IMAGE_URL}/${movie.backdrop_path}`} alt="" 
+  style={{height: "70vh", objectFit: "cover", width:"100%"}}/>
   </div> ))}
                 {/* <div>
                     <img src="assets/1.jpeg" />

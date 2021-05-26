@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Latest = (props) => {
   const u = props.u;
   var Heading = "heading";
-  const url = `https://api.themoviedb.org/3/movie/${u}?api_key=9937e01a0bed790196d656e18d30d9ad&language=en-US&page=1`;
+  const url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   const [movies, setMovies] = useState([]);
 
   const getMovies = useCallback(async () => {
@@ -49,7 +49,7 @@ const Latest = (props) => {
                 <Link to={`/${movie.id}`} style={{ textDecoration: "none" }}>
                   <div className="popularimage">
                     <img
-                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
                       alt=""
                     />
                   </div>

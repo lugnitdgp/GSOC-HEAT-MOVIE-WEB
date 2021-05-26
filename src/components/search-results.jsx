@@ -14,7 +14,7 @@ const Search = (props) => {
                 <div className="searchimage"  onClick={() => (
     window.location.href=`/${movie.id}` )}>
                   <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
                     alt="" 
                   />
                 </div>
