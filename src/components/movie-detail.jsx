@@ -84,7 +84,7 @@ const Details = () => {
                 </h2>
               </div>
               <div className="detailsrelease">
-                <h2>Released: {movie.release_date}</h2>
+                <h2>Release Date: {movie.release_date}</h2>
               </div>
 
               <div className="detailsgenres">
