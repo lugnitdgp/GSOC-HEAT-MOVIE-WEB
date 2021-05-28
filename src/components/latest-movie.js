@@ -23,7 +23,7 @@ const Latest = (props) => {
   if (u === "popular") {
     Heading = "Popular";
   } else if (u === "upcoming") {
-    Heading = "UPCOMING";
+    Heading = "Upcoming";
   } else if (u === "top_rated") {
     Heading = "Top Rated";
   } else if (u === "now_playing") {
@@ -32,14 +32,7 @@ const Latest = (props) => {
   return (
     <>
       <div className="moviesmain">
-        <h1
-          style={{
-            color: "var(--text-color)",
-            marginLeft: "85px",
-            marginTop: "100px",
-            fontSize: "60px",
-          }}
-        >
+        <h1>
           {Heading}
         </h1>
         <div className="movies">
@@ -53,8 +46,9 @@ const Latest = (props) => {
                       alt=""
                     />
                   </div>
-                  <div className="popular">
-                    <h2>Rating {movie.vote_average}/10</h2>
+                  <div className="popular" style={{display: "flex"}}>
+                    <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                    <h2>{movie.vote_average} &#11088;</h2>
                   </div>
                 </Link>
               </div>

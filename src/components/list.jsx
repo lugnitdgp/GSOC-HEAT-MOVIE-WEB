@@ -24,7 +24,7 @@ const List = (props) => {
   if (u === "popular") {
     Heading = "Popular";
   } else if (u === "upcoming") {
-    Heading = "UPCOMING";
+    Heading = "Upcoming";
   } else if (u === "top_rated") {
     Heading = "Top Rated";
   } else if (u === "now_playing") {

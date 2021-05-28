@@ -1,5 +1,5 @@
 :root {
-  --background-color: rgb(15, 11, 34);
+  --background-color: rgb(10, 8, 24);
   --text-color: white;
   --scroll-color: rgb(72, 72, 73);
 }
@@ -25,9 +25,8 @@ body {
   backdrop-filter: blur(3px);
   position: absolute;
   z-index: 3;
-  height:100%;
+  height: 100%;
   width: 100%;
-
 }
 .poster {
   /* z-index: 2; */
@@ -41,9 +40,8 @@ body {
   text-align: left;
 }
 .overview {
-      width: 70%;
-      margin-bottom: 0px;
-    
+  width: 70%;
+  margin-bottom: 0px;
 }
 /* .poster img {
   height: 300px;
@@ -56,6 +54,9 @@ body {
   height: 300px;
   width: auto;
   margin-right: 100px;
+} */
+/* .carousel-root {
+  height: 100%;
 } */
 .poster h1 {
   margin-top: 0px;
@@ -125,13 +126,13 @@ body {
   justify-content: center;
 }
 .popularimage img {
-  height: 420px;
+  height: 350px;
   width: auto;
   border-radius: 15px;
   box-shadow: 0px 4px 18px rgba(92, 89, 95, 0.5);
 }
 .popularmovie {
-  height: 500px;
+  height: 430px;
   width: auto;
   display: flex;
   flex-direction: row;
@@ -194,7 +195,7 @@ body {
   box-shadow: 0px 4px 18px rgba(92, 89, 95, 0.5);
 }
 .explore {
-  margin-top: 90px;
+  margin-top: 60px;
   display: flex;
   width: 100vw;
   height: auto;
@@ -356,6 +357,12 @@ body {
   width: 380px;
   height: 200px;
 }
+.moviesmain h1 {
+  color: var(--text-color);
+ text-align: center;
+ margin-top: 100px;
+ font-size: 60px;
+}
 /* .posterimage img {
      height: 300px;
      width: auto;
@@ -373,48 +380,56 @@ body {
     width: 100%;
   }
   .shadow {
-        overflow: hidden;
+    overflow: hidden;
   }
   .poster {
-      display: flex;
-      align-items: center;
+    display: flex;
+    align-items: center;
   }
-  
 }
 @media only screen and (min-width: 781px) and (max-width: 1352px) {
   /* .popular details {
 
  } */
- .shadow {
-     
-       overflow: hidden;
+ .moviesmain h1 {
+   margin: 10px;
+   margin-top: 90px;
  }
- .overview {
-   width: 78%
+ .popularimage img {
+   height: 290px;
  }
- .poster {
-   margin-left: 120px;
-  display: flex;
-  align-items: center;
+ .popularmovie {
+   height: 380px;
  }
- .maincard {
-   margin-top: 162px;
-   width : 60%;
- }
- .poster h1 {
+  .shadow {
+    overflow: hidden;
+  }
+  .overview {
+    width: 78%;
+  }
+  .poster {
+    margin-left: 120px;
+    display: flex;
+    align-items: center;
+  }
+  .maincard {
+    margin-top: 162px;
+    width: 60%;
+  }
+  .poster h1 {
     width: 80%;
     height: auto;
-   margin: 1px ;
-   font-size: 40px;
- }
- .poster h2 {
-   margin: 2px;
-   font-size: 18px;
- }
- .rating {
-   margin-top: 5px;
-   margin-bottom: -5px;
- }
+    margin: 1px;
+    font-size: 40px;
+  }
+  .poster h2 {
+    margin: 2px;
+    font-size: 18px;
+  }
+  .rating {
+    margin-top: 5px;
+    margin-bottom: -5px;
+  }
   .align {
     margin-top: 100px;
     height: 600px;
@@ -636,10 +651,20 @@ body {
   }
   .carousel .slider-wrapper {
     overflow: visible;
-  height: 100% !important;
+    height: 100% !important;
+    padding-bottom: 0px;
+  }
+  .carousel .slide {
+    height: 100%;
   }
   .carousel .slider.animated {
-    height: 100% !important;
+    height: 90% !important;
+  }
+  .carousel .thumbs-wrapper {
+    display: none;
+  }
+  .carousel.carousel-slider .control-arrow {
+    height: 100%;
   }
   .poster {
     display: flex;
@@ -657,6 +682,23 @@ body {
   .carouselimage {
     height: 50vh;
   }
+  .popularimage img {
+    height: 190px;
+  }
+  .popularmovie {
+    height: 250px;
+    margin: 15px;
+    /* margin-right: 12px; */
+  }
+  .popular h2 {
+    font-size: 20px;
+  }
+  .moviesmain h1{
+    font-size: 50px;
+    margin: 5px;
+    margin-top: 70px;
+  }
+  
   /* .maincard {
     margin-top: 80px;
   } */
