@@ -136,7 +136,7 @@ body {
   width: auto;
   display: flex;
   flex-direction: row;
-  margin: 0 30px;
+  margin: 20px 30px;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -167,17 +167,18 @@ body {
   margin: 60px 0px;
   position: relative;
   z-index: 20;
+  
   /* overflow: scroll; */
 }
 .searchmovie {
-  height: 500px;
+  height: 430px;
   width: auto;
-  display: flex;
-  flex-direction: row;
-  margin: 0 30px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  margin: 20px 30px;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
 }
 .searchmovies {
   width: 100%;
@@ -188,8 +189,13 @@ body {
   justify-content: center;
 }
 
+.searchimage {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 .searchimage img {
-  height: 420px;
+  height: 350px;
   width: auto;
   border-radius: 15px;
   box-shadow: 0px 4px 18px rgba(92, 89, 95, 0.5);
@@ -204,6 +210,7 @@ body {
   color: var(--text-color);
   margin-left: 50px;
   width: 40%;
+  font-size: 50px;
 }
 .space {
   width: 60%;
@@ -681,6 +688,7 @@ body {
   }
   .carouselimage {
     height: 50vh;
+    filter: blur(2px);
   }
   .popularimage img {
     height: 190px;
@@ -698,7 +706,16 @@ body {
     margin: 5px;
     margin-top: 70px;
   }
-  
+  .searchimage img {
+    height: 190px;
+  }
+  .searchmovie {
+    height: 250px;
+    margin: 15px;
+  }
+  .searchmovies{
+    margin-top: 70px;
+  }
   /* .maincard {
     margin-top: 80px;
   } */

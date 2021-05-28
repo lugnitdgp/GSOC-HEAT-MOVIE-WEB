@@ -21,6 +21,10 @@ const Search = (props) => {
                 {/* <div className="popular">
                   <h2>{movie.title}</h2>
                 </div> */}
+                  <div className="popular" style={{display: "flex"}}>
+                    <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                    <h2>{movie.vote_average} &#11088;</h2>
+                  </div>
 
             </div>
           ))}
