@@ -357,7 +357,7 @@ h2 {
   width: fit-content;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 0 10px;
   margin: 10px;
   margin-right: 28px;
@@ -365,9 +365,9 @@ h2 {
   border-radius: 13px;
 }
 .detailsgenres h2 {
-  margin: 0px;
+  margin-top: 8px;
   margin-right: 8px;
-  margin-bottom: -6px;
+  margin-bottom: 0px;
 }
 .videos {
   margin-top: 8px;
@@ -424,6 +424,7 @@ h2 {
   line-height: 30px;
   font-weight:600;
   font-family: 'Overlock';
+  letter-spacing: 0.75px;
 }
 .detailsrating {
   width: fit-content;
@@ -654,6 +655,7 @@ h2 {
     margin-left: -120px;
     /* width: 100vw; */
     flex-wrap: wrap;
+    line-height: 30px;
   }
 
   /* .detailsdesc h2 {

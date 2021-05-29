@@ -96,14 +96,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginRight: theme.spacing(6),
     // width: `calc(1em + ${theme.spacing(2)}px)`,
-    fontSize: "25px",
+    fontSize: "20px",
     // display: "none",
     [theme.breakpoints.up("md")]: {
       display: "block",
     },
   },
   listItemText: {
-    fontSize: "20px",
+    fontSize: "22px",
   },
   searches: {
     [theme.breakpoints.down("md")]: {
@@ -349,7 +349,7 @@ export default function SearchAppBar() {
               <Typography
                 className={classes.title}
                 variant="h4"
-                style={{ width: "40%" }}
+                style={{ width: "50%" }}
                 onClick={() => (window.location.href = "/nowplaying")}
               >
                 Now Playing
