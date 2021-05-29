@@ -54,7 +54,10 @@ const Bigcard = () => {
               alt=""
               className="carouselimage"
             />
-            <div className="shadow">
+            <div
+              className="shadow"
+              onClick={() => (window.location.href = `/${movie.id}`)}
+            >
               <div className="poster">
                 <div className="posterimage">
                   <img
@@ -66,9 +69,13 @@ const Bigcard = () => {
                       marginRight: "47px",
                       marginTop: "150px",
                     }}
+                    onClick={() => (window.location.href = `/${movie.id}`)}
                   />{" "}
                 </div>
-                <div className="maincard">
+                <div
+                  className="maincard"
+                  onClick={() => (window.location.href = `/${movie.id}`)}
+                >
                   <h1>{movie.original_title}</h1>
                   <h2 className="overview">{movie.overview}</h2>
                   <div className="rating" style={{ display: "flex" }}>

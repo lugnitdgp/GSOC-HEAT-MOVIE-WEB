@@ -641,6 +641,9 @@ body {
     margin-bottom: 8px;
     font-size: 25px;
   }
+  .next {
+    margin-right: 20px;
+  }
   .next h3 {
     /* padding-bottom: px; */
     font-size: 15px;
@@ -703,7 +706,7 @@ body {
     filter: blur(2px);
   }
   .popularimage img {
-    height: 190px;
+    height: 205px;
   }
   .popularmovie {
     height: 250px;
@@ -714,7 +717,7 @@ body {
     font-size: 20px;
   }
   .moviesmain h1{
-    font-size: 50px;
+    font-size: 40px;
     margin: 5px;
     margin-top: 70px;
   }

@@ -1,10 +1,9 @@
 import React from "react";
-import clsx from "clsx";
 import {
   AppBar,
   Hidden,
   List,
-  Drawer,
+  SwipeableDrawer,
   ListItem,
   ListItemText,
 } from "@material-ui/core";
@@ -27,6 +26,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     // position: "fixed",
   },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: "auto",
+  },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
@@ -34,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}/2px)`,
+    width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: `${drawerWidth}px`,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
@@ -52,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backdropFilter: "blur(3px)",
     color: "white",
     // fontSize: "25px",
   },
@@ -85,21 +91,30 @@ const useStyles = makeStyles((theme) => ({
   // menuButton: {
   //   marginRight: theme.spacing(2),
   // },
+
   title: {
     flexGrow: 1,
     marginRight: theme.spacing(6),
     // width: `calc(1em + ${theme.spacing(2)}px)`,
-    fontSize: "40px",
+    fontSize: "25px",
     // display: "none",
     [theme.breakpoints.up("md")]: {
       display: "block",
-      fontSize: "30px",
     },
   },
   listItemText: {
-    fontSize: "25px",
+    fontSize: "20px",
+  },
+  searches: {
+    [theme.breakpoints.down("md")]: {
+      marginLeft: theme.spacing(1),
+      width: "95%",
+      display: "flex",
+      justifyContent: "flex-end",
+    },
   },
   search: {
+    // backdropFilter: "blur(7px)",
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.45),
@@ -108,13 +123,21 @@ const useStyles = makeStyles((theme) => ({
     },
     marginLeft: 0,
     // width: "50%",
-    [theme.breakpoints.up("md")]: {
+    // [theme.breakpoints.down("lg")]: {
+    //   marginLeft: theme.spacing(1),
+    //   width: "0%",
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   marginLeft: theme.spacing(1),
+    //   width: "10%",
+    // },
+    [theme.breakpoints.down("sm")]: {
       marginLeft: theme.spacing(1),
-      width: "auto",
+      width: "40%",
     },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(0, 1),
     height: "100%",
     position: "absolute",
     pointerEvents: "none",
@@ -126,9 +149,9 @@ const useStyles = makeStyles((theme) => ({
     color: "inherit",
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
+    padding: theme.spacing(1, 0, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingLeft: `calc(1em + ${theme.spacing(3)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
@@ -144,15 +167,25 @@ export default function SearchAppBar() {
   const [text, setText] = useState("");
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
   const submit = (e) => {
     e.preventDefault();
     // window.location.href = "/search";
@@ -178,13 +211,10 @@ export default function SearchAppBar() {
     <>
       <div className={classes.root}>
         <AppBar
-          position="fixed"
-          className={clsx(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}
+          position="absolute"
           style={{
             backgroundColor: "transparent",
-            // backdropFilter: "blur(7px)",
+            backdropFilter: "blur(5px)",
           }}
           elevation={0}
         >
@@ -193,24 +223,22 @@ export default function SearchAppBar() {
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                onClick={handleDrawerOpen}
+                onClick={toggleDrawer("left", true)}
                 edge="start"
-                className={clsx(classes.menuButton, open && classes.hide)}
               >
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Drawer
-              className={classes.drawer}
-              variant="persistent"
+            <SwipeableDrawer
               anchor="left"
-              open={open}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
+              open={state["left"]}
+              onClose={toggleDrawer("left", false)}
+              onOpen={toggleDrawer("left", true)}
+              className={classes.drawer}
+              classes={{ paper: classes.drawerPaper }}
             >
               <div className={classes.drawerHeader}>
-                <IconButton onClick={handleDrawerClose}>
+                <IconButton onClick={toggleDrawer("left", false)}>
                   {theme.direction === "ltr" ? (
                     <ChevronLeftIcon style={{ color: "white" }} />
                   ) : (
@@ -219,6 +247,16 @@ export default function SearchAppBar() {
                 </IconButton>
               </div>
               <List>
+                <ListItem
+                  button
+                  key="Home"
+                  onClick={() => (window.location.href = "/")}
+                >
+                  <ListItemText
+                    classes={{ primary: classes.listItemText }}
+                    primary="Home"
+                  />
+                </ListItem>
                 <ListItem
                   button
                   key="Trending"
@@ -270,15 +308,16 @@ export default function SearchAppBar() {
                   />
                 </ListItem>
               </List>
-            </Drawer>
-            <Typography
-              className={classes.title}
-              variant="h4"
-              onClick={() => (window.location.href = "/")}
-            >
-              Movies
-            </Typography>
+            </SwipeableDrawer>
+
             <Hidden mdDown>
+              <Typography
+                className={classes.title}
+                variant="h4"
+                onClick={() => (window.location.href = "/")}
+              >
+                Home
+              </Typography>
               <Typography
                 className={classes.title}
                 variant="h4"
@@ -316,21 +355,23 @@ export default function SearchAppBar() {
                 Now Playing
               </Typography>
             </Hidden>
-            <div className={classes.search} search>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
+            <div className={classes.searches}>
+              <div className={classes.search} search>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ "aria-label": "search" }}
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  // onClick={() => (window.location.href = "/search")}
+                />
               </div>
-              <InputBase
-                placeholder="Search Movie…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ "aria-label": "search" }}
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                // onClick={() => (window.location.href = "/search")}
-              />
             </div>
           </Toolbar>
         </AppBar>
