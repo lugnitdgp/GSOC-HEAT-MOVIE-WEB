@@ -6,12 +6,11 @@ import { Link } from "react-router-dom";
 const Latest = (props) => {
   const u = props.u;
   var Heading = "heading";
-  var url="url";
-  if (u==="trending") {
-  url=`${process.env.REACT_APP_TRENDING_URL}`;
-  }
-  else {
-   url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+  var url = "url";
+  if (u === "trending") {
+    url = `${process.env.REACT_APP_TRENDING_URL}`;
+  } else {
+    url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   }
   const [movies, setMovies] = useState([]);
 
@@ -34,16 +33,13 @@ const Latest = (props) => {
     Heading = "Top Rated";
   } else if (u === "now_playing") {
     Heading = "Now Playing";
-  }
-   else if (u === "trending") {
+  } else if (u === "trending") {
     Heading = "Trending";
   }
   return (
     <>
       <div className="moviesmain">
-        <h1>
-          {Heading}
-        </h1>
+        <h1>{Heading}</h1>
         <div className="movies">
           <div className="popularmovies">
             {movies.map((movie) => (
@@ -55,9 +51,11 @@ const Latest = (props) => {
                       alt=""
                     />
                   </div>
-                  <div className="popular" style={{display: "flex"}}>
-                    <h2 style={{ marginRight: "10px" }}>Rating: </h2>
-                    <h2>{movie.vote_average} &#11088;</h2>
+                  <div className="pop">
+                    <div className="popular" style={{ display: "flex" }}>
+                      <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                      <h2>{movie.vote_average} &#11088;</h2>
+                    </div>
                   </div>
                 </Link>
               </div>

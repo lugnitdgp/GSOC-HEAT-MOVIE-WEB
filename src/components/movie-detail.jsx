@@ -72,26 +72,30 @@ const Details = () => {
                   <h2>{movie.overview}</h2>
                 </div>
               </div>
-              <div className="detailsrating">
-                <h2 style={{ marginRight: "10px" }}>Rating: </h2>
-                <h2>{movie.vote_average} &#11088;</h2>
-                {/* <span className="span"></span> */}
-              </div>
-              <div className="detailsruntime">
-                <h2>
-                  Runtime: {Math.floor(movie.runtime / 60)}h{" "}
-                  {movie.runtime % 60}min
-                </h2>
-              </div>
-              <div className="detailsrelease">
-                <h2>Release Date: {movie.release_date}</h2>
-              </div>
+              <div className="real">
+                <div className="realrow">
+                  <div className="detailsrating">
+                    <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                    <h2>{movie.vote_average} &#11088;</h2>
+                    {/* <span className="span"></span> */}
+                  </div>
+                  <div className="detailsruntime">
+                    <h2>
+                      Runtime: {Math.floor(movie.runtime / 60)}h{" "}
+                      {movie.runtime % 60}min
+                    </h2>
+                  </div>
+                  <div className="detailsruntime">
+                    <h2>Release Date: {movie.release_date}</h2>
+                  </div>
 
-              <div className="detailsgenres">
-                <h2>Genres:</h2>
-                {movie.genres?.map((genre) => (
-                  <h2>{genre.name},</h2>
-                ))}
+                  <div className="detailsgenres">
+                    <h2>Genres:</h2>
+                    {movie.genres?.map((genre) => (
+                      <h2>{genre.name},</h2>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

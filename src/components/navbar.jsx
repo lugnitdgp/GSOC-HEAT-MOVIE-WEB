@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(10, 8, 24, 0.7)",
     backdropFilter: "blur(3px)",
     color: "white",
     // fontSize: "25px",
@@ -349,7 +349,7 @@ export default function SearchAppBar() {
               <Typography
                 className={classes.title}
                 variant="h4"
-                style={{ width: "30%" }}
+                style={{ width: "40%" }}
                 onClick={() => (window.location.href = "/nowplaying")}
               >
                 Now Playing
