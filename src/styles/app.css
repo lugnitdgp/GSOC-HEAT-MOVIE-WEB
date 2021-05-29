@@ -7,8 +7,20 @@
 body {
   background-color: var(--background-color);
 }
+.navbar {
+  display: flex;
+}
+.nav {
+  width: 15%;
+}
 /* .Appbar {
     Color: black;
+} */
+/* .MuiTypography-root {
+  width: 130px !important;
+} */
+/* .title{
+  margin-right: 60px;
 } */
 .carouselimage {
   height: 70vh;

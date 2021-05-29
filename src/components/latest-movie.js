@@ -6,7 +6,13 @@ import { Link } from "react-router-dom";
 const Latest = (props) => {
   const u = props.u;
   var Heading = "heading";
-  const url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+  var url="url";
+  if (u==="trending") {
+  url=`${process.env.REACT_APP_TRENDING_URL}`;
+  }
+  else {
+   url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+  }
   const [movies, setMovies] = useState([]);
 
   const getMovies = useCallback(async () => {
@@ -28,6 +34,9 @@ const Latest = (props) => {
     Heading = "Top Rated";
   } else if (u === "now_playing") {
     Heading = "Now Playing";
+  }
+   else if (u === "trending") {
+    Heading = "Trending";
   }
   return (
     <>
