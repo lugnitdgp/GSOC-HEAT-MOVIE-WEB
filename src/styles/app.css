@@ -1,28 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
 :root {
   --background-color: rgb(10, 8, 24);
   --text-color: white;
   --scroll-color: rgb(72, 72, 73);
-  --box-color:rgba(30, 128, 119, 0.5);
+  --box-color: rgba(30, 128, 119, 0.5);
 }
 
 body {
   background-color: var(--background-color);
 }
 h1 {
-  font-family: 'Coda';
+  font-family: "Coda";
   font-weight: 600;
 }
 h3 {
-  font-family: 'Coda';
+  font-family: "Coda";
   font-weight: 500;
 }
 h2 {
-  font-family: 'Baloo Tammudu 2';
-  font-weight:700;
+  font-family: "Baloo Tammudu 2";
+  font-weight: 700;
   /* line-height:30px; */
 }
 .navbar {
@@ -72,8 +72,9 @@ h2 {
 .overview {
   width: 70%;
   margin-bottom: 0px;
-  line-height:30px;
-  font-weight: 500;
+  line-height: 30px;
+  font-weight: 550;
+  font-family: 'Overlock';
 }
 /* .poster img {
   height: 300px;
@@ -101,9 +102,8 @@ h2 {
   font-size: 22px;
 }
 .maincard {
- 
-  margin-top: 150px;
-  width: 70%;
+  margin-top: 15vh;
+  width: 55%;
   height: auto;
 }
 
@@ -177,24 +177,25 @@ h2 {
 }
 .popular {
   color: var(--text-color);
-   width:fit-content;
-   display: flex;
-   text-align: center;
-   align-items: center;
-   justify-content: center;
-   padding: 0 10px;
-   margin: 10px;
-   background-color: var(--box-color);
-   border-radius: 13px;
+  width: fit-content;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 10px;
+  background-color: var(--box-color);
+  border-radius: 13px;
 }
 .pop {
-  margin-top: 5px;
+  margin: 8px 0px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 .popular h2 {
-  margin: 0px;
-   margin-top: 5px;
+  /* margin: 0px; */
+  margin-top: 0px;
+  margin-bottom: -6px;
 }
 .popularmovies {
   width: 100%;
@@ -219,7 +220,7 @@ h2 {
   margin: 60px 0px;
   position: relative;
   z-index: 20;
-  
+
   /* overflow: scroll; */
 }
 .searchmovie {
@@ -242,9 +243,9 @@ h2 {
 }
 
 .searchimage {
-    display: flex;
-    align-items: center;
-    justify-content: center
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .searchimage img {
   height: 350px;
@@ -259,9 +260,10 @@ h2 {
   height: auto;
 }
 .explore h1 {
+  margin-top: 0px;
   color: var(--text-color);
   margin-left: 50px;
-  width: 40%;
+  width: 50%;
   font-size: 50px;
 }
 .space {
@@ -352,20 +354,20 @@ h2 {
    height: 700px;
 } */
 .detailsgenres {
-width:fit-content;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 0 10px;
-margin: 10px;
-margin-right: 28px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 10px;
+  margin-right: 28px;
   background-color: var(--box-color);
   border-radius: 13px;
 }
 .detailsgenres h2 {
   margin: 0px;
   margin-right: 8px;
-   margin-top: 5px;
+  margin-bottom: -6px;
 }
 .videos {
   margin-top: 8px;
@@ -419,39 +421,40 @@ margin-right: 28px;
   margin-top: 18px;
 }
 .detailsdesc h2 {
-    line-height:30px;
-    font-weight: 500;
+  line-height: 30px;
+  font-weight:600;
+  font-family: 'Overlock';
 }
 .detailsrating {
-  width:fit-content;
-  display: flex;
-   align-items: center;
-   justify-content: center;
-   padding: 0 10px;
-   margin: 10px;
-   background-color: var(--box-color);
-   border-radius: 13px;
-}
-.detailsrating h2 {
-  margin: 0px;
-   margin-top: 5px;
-  text-align: center;
-}
-.detailsruntime {
-  width:fit-content;
+  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 10px;
   margin: 10px;
-   padding-left: 5px;
-   background-color: var(--box-color);
-   border-radius: 13px;
+  background-color: var(--box-color);
+  border-radius: 13px;
+}
+.detailsrating h2 {
+  margin: 0px;
+  margin-bottom: -6px;
+  text-align: center;
+}
+.detailsruntime {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 15px;
+ 
+  background-color: var(--box-color);
+  border-radius: 13px;
 }
 .detailsruntime h2 {
   margin: 0px;
-  margin-top: 5px;
-   text-align: center;
+  margin-bottom: -6px;
+  text-align: center;
 }
 
 .vid {
@@ -461,23 +464,24 @@ margin-right: 28px;
 }
 .moviesmain h1 {
   color: var(--text-color);
- text-align: center;
- margin-top: 100px;
- font-size: 60px;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 60px;
 }
 .rating {
-   width:fit-content;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding: 0 10px;
-   margin: 10px 0px;
-   background-color: var(--box-color);
-   border-radius: 13px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 10px;
+   margin-top: 10px;
+  background-color: var(--box-color);
+  border-radius: 13px;
 }
 .rating h2 {
-  margin: 0px;
-   margin-top: 5px;
+  margin-top: 0px;
+  margin-bottom: -7px;
+  /* margin: 5px; */
   text-align: center;
 }
 /* .posterimage img {
@@ -518,14 +522,14 @@ margin-right: 28px;
   /* .popular details {
 
  } */
- .moviesmain h1 {
-   margin: 10px;
-   margin-top: 90px;
- }
- .popularimage img {
-   height: 310px;
- }
- /* .popularmovie {
+  .moviesmain h1 {
+    margin: 10px;
+    margin-top: 90px;
+  }
+  .popularimage img {
+    height: 310px;
+  }
+  /* .popularmovie {
    height: 380px;
  } */
   .shadow {
@@ -566,7 +570,7 @@ margin-right: 28px;
     height: 630px;
     width: 500px;
   }
- 
+
   .details {
     margin-top: 120px;
   }
@@ -584,7 +588,7 @@ margin-right: 28px;
   }
   .detailsdesc {
     margin-top: 0px;
-      line-height:30px;
+    line-height: 30px;
   }
   .details h2 {
     font-size: 20px;
@@ -603,7 +607,9 @@ margin-right: 28px;
   }
 }
 @media screen and (max-width: 780px) {
-
+  /* .maincard h1 {
+    font-size: 25px;
+  } */
   .overview {
     display: none;
   }
@@ -625,7 +631,9 @@ margin-right: 28px;
     align-items: center;
     justify-content: center;
   }
-
+ .rating h2 {
+   font-size: 20px;
+ }
   .details h2 {
     font-size: 20px;
   }
@@ -641,7 +649,7 @@ margin-right: 28px;
   .detailsruntime {
     margin-left: -120px;
   }
-  
+
   .detailsgenres {
     margin-left: -120px;
     /* width: 100vw; */
@@ -671,7 +679,6 @@ margin-right: 28px;
     align-items: center;
   }
   .detailsrating h2 {
-    
     margin-left: 0px;
     /* display: flex;
     align-items: center; */
@@ -732,9 +739,11 @@ margin-right: 28px;
     padding-top: 0px;
   } */
   .explore h1 {
+    margin-top: 10px;
     margin-left: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     font-size: 25px;
+    
   }
   .next {
     margin-right: 20px;
@@ -747,7 +756,7 @@ margin-right: 28px;
     display: none;
   }
   .explore {
-    margin-top: 5px;
+    margin-top: 30px;
   }
   .Search {
     margin-top: 15px;
@@ -772,10 +781,10 @@ margin-right: 28px;
     padding-bottom: 0px;
   }
   .carousel .slide {
-    height: 100%;
+    height: 90%;
   }
   .carousel .slider.animated {
-    height: 90% !important;
+    height: 80% !important;
   }
   .carousel .thumbs-wrapper {
     display: none;
@@ -790,16 +799,17 @@ margin-right: 28px;
   }
   .posterimage img {
     height: 200px !important;
-    margin-right: 10px !important;
+    margin-right: 18px !important;
   }
   .poster h1 {
-    margin-top: 75px;
+    margin-top: 60px;
     font-size: 35px;
+    line-height: 40px;
   }
   .carouselimage {
     height: 50vh;
     filter: blur(2px);
-  } 
+  }
   .popular {
     /* margin: 0px; */
     margin: 6px 0px;
@@ -816,9 +826,9 @@ margin-right: 28px;
     /* margin-right: 12px; */
   }
   .popular h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
-  .moviesmain h1{
+  .moviesmain h1 {
     font-size: 40px;
     margin: 5px;
     margin-top: 70px;
@@ -830,7 +840,7 @@ margin-right: 28px;
     height: 250px;
     margin: 15px;
   }
-  .searchmovies{
+  .searchmovies {
     margin-top: 70px;
   }
   /* .maincard {
