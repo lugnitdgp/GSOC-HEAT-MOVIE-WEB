@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overlock&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
@@ -74,7 +74,7 @@ h2 {
   margin-bottom: 0px;
   line-height: 30px;
   font-weight: 550;
-  font-family: 'Overlock';
+  font-family: "Overlock";
 }
 /* .poster img {
   height: 300px;
@@ -422,8 +422,8 @@ h2 {
 }
 .detailsdesc h2 {
   line-height: 30px;
-  font-weight:600;
-  font-family: 'Overlock';
+  font-weight: 600;
+  font-family: "Overlock";
   letter-spacing: 0.75px;
 }
 .detailsrating {
@@ -447,8 +447,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 0 10px;
-  margin: 15px;
- 
+  margin: 10px;
   background-color: var(--box-color);
   border-radius: 13px;
 }
@@ -475,7 +474,7 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 0px 10px;
-   margin-top: 10px;
+  margin-top: 10px;
   background-color: var(--box-color);
   border-radius: 13px;
 }
@@ -627,14 +626,14 @@ h2 {
     margin-left: -120px;
     width: 90vw;
     height: 50%;
-    margin-top: 10px;
+    margin-top: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
- .rating h2 {
-   font-size: 20px;
- }
+  .rating h2 {
+    font-size: 20px;
+  }
   .details h2 {
     font-size: 20px;
   }
@@ -671,12 +670,13 @@ h2 {
   }
   .detailstitle h1 {
     font-size: 35px;
+    line-height: 40px;
   }
   .detailstitle {
     width: 55vw;
     height: 150px;
     margin-top: 250px;
-    margin-left: 20px;
+    margin-left: 18px;
     display: flex;
     align-items: center;
   }
@@ -745,7 +745,6 @@ h2 {
     margin-left: 20px;
     margin-bottom: 0px;
     font-size: 25px;
-    
   }
   .next {
     margin-right: 20px;
