@@ -3,8 +3,7 @@
 ## FRONTEND
 
 <img alt="ui" src="public/ui1.png">
-<img alt="ui1" src="public/ui2.jpeg" height= "500">
-<img alt="ui2" src="public/ui3.jpeg" height="500">
+<img alt="ui1" src="public/ui2.jpeg" height= "500"><img alt="ui2" src="public/ui3.jpeg" height="500">
 
 ## Description
 
