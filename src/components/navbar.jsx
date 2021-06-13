@@ -195,11 +195,13 @@ export default function SearchAppBar() {
   // console.log(text);
   const url = `${process.env.REACT_APP_SEARCH_URL}${text}&page=1&include_adult=false`;
   const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
   const getMovies = useCallback(async () => {
     const response = await fetch(url);
     const movies = await response.json();
     setMovies(movies.results);
+    setLoading(false);
   }, [url]);
 
   useEffect(() => {
@@ -208,6 +210,12 @@ export default function SearchAppBar() {
   console.log(movies);
 
   return (
+     <>
+      {loading ? (
+        <div className="loader">
+          <h1>Loading...</h1>
+        </div>
+      ) : (
     <>
       <div className={classes.root}>
         <AppBar
@@ -384,5 +392,7 @@ export default function SearchAppBar() {
         )}
       </div>
     </>
+      )};
+      </>
   );
 }

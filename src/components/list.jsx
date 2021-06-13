@@ -9,11 +9,13 @@ const List = (props) => {
   var Heading = "heading";
   const url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getMovies = useCallback(async () => {
     const response = await fetch(url);
     const movies = await response.json();
     setMovies(movies.results.slice(0, 11));
+    setLoading(false);
   }, [url]);
 
   useEffect(() => {
@@ -31,6 +33,12 @@ const List = (props) => {
     Heading = "Now Playing";
   }
   return (
+    <>
+      {loading ? (
+        <div className="loader">
+          <h1>Loading...</h1>
+        </div>
+      ) : (
     <>
       <div className="explore">
         <h1>{Heading}</h1>
@@ -61,6 +69,8 @@ const List = (props) => {
         ))}
       </div>
     </>
+      )};
+      </>
   );
 };
 

@@ -10,6 +10,8 @@ const Bigcard = () => {
   const url = `${process.env.REACT_APP_TRENDING_URL}`;
   const [movies, setMovies] = useState([]);
 
+
+
   const getMovies = useCallback(async () => {
     const response = await fetch(url);
     const movies = await response.json();

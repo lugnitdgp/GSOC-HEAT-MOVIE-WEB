@@ -514,18 +514,12 @@ h2 {
 }
 
 
-
-.videocontrol:hover {
-  opacity: .9;
-}
-
-.videocontrol a {
-  position: relative;
-  top: 19%;
-  left: 45%;
-  background: none;
-  border: none;
-  -webkit-appearance: none;
+.loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1353px) {

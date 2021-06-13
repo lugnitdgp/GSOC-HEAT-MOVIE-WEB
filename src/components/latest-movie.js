@@ -13,11 +13,13 @@ const Latest = (props) => {
     url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   }
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getMovies = useCallback(async () => {
     const response = await fetch(url);
     const movies = await response.json();
     setMovies(movies.results);
+    setLoading(false);
   }, [url]);
 
   useEffect(() => {
@@ -38,31 +40,43 @@ const Latest = (props) => {
   }
   return (
     <>
-      <div className="moviesmain">
-        <h1>{Heading}</h1>
-        <div className="movies">
-          <div className="popularmovies">
-            {movies.map((movie) => (
-              <div className="popularmovie">
-                <Link to={`/${movie.id}`} style={{ textDecoration: "none" }}>
-                  <div className="popularimage">
-                    <img
-                      src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
-                      alt=""
-                    />
-                  </div>
-                  <div className="pop">
-                    <div className="popular" style={{ display: "flex" }}>
-                      <h2 style={{ marginRight: "10px" }}>Rating: </h2>
-                      <h2>{movie.vote_average} &#11088;</h2>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+      {loading ? (
+        <div className="loader">
+          <h2>Loading...</h2>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="moviesmain">
+            <h1>{Heading}</h1>
+            <div className="movies">
+              <div className="popularmovies">
+                {movies.map((movie) => (
+                  <div className="popularmovie">
+                    <Link
+                      to={`/${movie.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <div className="popularimage">
+                        <img
+                          src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
+                          alt=""
+                        />
+                      </div>
+                      <div className="pop">
+                        <div className="popular" style={{ display: "flex" }}>
+                          <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                          <h2>{movie.vote_average} &#11088;</h2>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+      ;
     </>
   );
 };
