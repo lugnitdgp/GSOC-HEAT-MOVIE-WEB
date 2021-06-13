@@ -1,6 +1,8 @@
 // import zIndex from "@material-ui/core/styles/zIndex";
 import React from "react";
-import { useState, useEffect, useCallback } from "react";
+import ReactPlayer from "react-player";
+import { Waypoint } from "react-waypoint";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 const Details = () => {
@@ -32,6 +34,38 @@ const Details = () => {
   }, [video_url, getVideo]);
   console.log(movie);
 
+  let [shouldPlay, updatePlayState] = useState(true);
+
+  let handleEnterViewport = function () {
+    updatePlayState(true);
+  };
+  let handleExitViewport = function () {
+    updatePlayState(false);
+  };
+
+  // const videoRef = useRef(null);
+
+  // useEffect(() => {
+  //   let options = {
+  //     rootMargin: "0px",
+  //     threshold: [0.25, 0.75],
+  //   };
+
+  //   let handlePlay = (entries, observer) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         videoRef.current.play();
+  //       } else {
+  //         videoRef.current.pause();
+  //       }
+  //     });
+  //   };
+
+  //   let observer = new IntersectionObserver(handlePlay, options);
+  //   // video.forEach((vid) => {
+  //   observer.observe(videoRef.current);
+  //   // });
+  // });
   return (
     <>
       <img
@@ -106,14 +140,30 @@ const Details = () => {
             <div className="videoscroll">
               <div className="video">
                 {video?.map((vid) => (
-                  <iframe
-                    className="vid"
-                    src={`https://www.youtube.com/embed/${vid.key}`}
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
+                  // <iframe
+                  //   className="vid"
+                  //   ref={videoRef}
+                  //   src={`https://www.youtube.com/embed/${vid.key}`}
+                  //   title="YouTube video player"
+                  //   frameborder="0"
+                  //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  //   allowfullscreen
+                  // ></iframe>
+                  <Waypoint onLeave={handleExitViewport}>
+                    <ReactPlayer
+                      // volume={0}
+                      // muted={true}
+                      playing={shouldPlay}
+                      url={`https://www.youtube.com/embed/${vid.key}`}
+                      className="vid"
+                      // {...props}
+                    />
+                  </Waypoint>
+                  // <ReactPlayer
+                  //   url={`https://www.youtube.com/embed/${vid.key}`}
+                  //   // ref={videoRef}
+                  //   className="vid"
+                  // />
                 ))}
               </div>
             </div>

@@ -490,6 +490,44 @@ h2 {
      margin-right: 47px;
      margin-top: 150px;
 } */
+/* #wrapper {
+  width: 640px;
+  margin: 0 auto;
+}
+
+#scrollaway {
+  width: 640px;
+  height: 1200px;
+  background-color: hsl(199, 98%, 48%);
+} */
+.videocontrol {
+  position: absolute;
+  z-index: 1001;
+  width: 100%;
+  top: 45%;
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  -moz-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+
+
+.videocontrol:hover {
+  opacity: .9;
+}
+
+.videocontrol a {
+  position: relative;
+  top: 19%;
+  left: 45%;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
 @media screen and (min-width: 1353px) {
   /* .tails {
     position: fixed;
