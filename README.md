@@ -3,7 +3,9 @@
 ## FRONTEND
 
 <img alt="ui" src="public/ui1.png">
-<img alt="ui1" src="public/ui2.jpeg" height= "500">                                     <img alt="ui2" src="public/ui3.jpeg" height="500">
+<p>
+<img alt="ui1" src="public/ui2.jpeg" height= "500">                                    
+ <img alt="ui2" src="public/ui3.jpeg" height="500"></p>
 
 ## Description
 
@@ -20,8 +22,6 @@ A movie surfing application using tmdb api.
 
 https://movie-web-ten.vercel.app/.
 
-# Application is dockerized
-
 ## Installation and Usage
 
 - Clone this repository
@@ -31,8 +31,30 @@ https://movie-web-ten.vercel.app/.
 npm install
 ```
 
+- create .env file and fill it up with required values from .env.example
+
 - Run the development Server
 
 ```
 npm start
+```
+
+# Application is dockerized
+
+- Run the docker image by running this command
+
+```
+docker run shruti3105/movie-web
+```
+
+- To Run the docker image on your local host, run this command
+
+```
+docker run -p 3000:3000 shruti3105/movie-web
+```
+
+- To build docker compose, run this command
+
+```
+docker-compose up -d --build
 ```
