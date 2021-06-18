@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "../styles/app.css";
+import { Slide } from "react-awesome-reveal";
 
 const List = (props) => {
   const u = props.u;
@@ -51,6 +52,7 @@ const List = (props) => {
           </Link>
         </div>
       </div>
+      <Slide direction="right">
       <div className="listmovies">
         {movies.map((movie) => (
           <div className="listmovie">
@@ -68,8 +70,9 @@ const List = (props) => {
           </div>
         ))}
       </div>
+      </Slide>
     </>
-      )};
+      )}
       </>
   );
 };

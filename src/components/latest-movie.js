@@ -2,6 +2,7 @@ import React from "react";
 // import movie from "../assests/movie.jpg";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { Slide, Zoom } from "react-awesome-reveal";
 
 const Latest = (props) => {
   const u = props.u;
@@ -47,32 +48,36 @@ const Latest = (props) => {
       ) : (
         <>
           <div className="moviesmain">
-            <h1>{Heading}</h1>
-            <div className="movies">
-              <div className="popularmovies">
-                {movies.map((movie) => (
-                  <div className="popularmovie">
-                    <Link
-                      to={`/${movie.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <div className="popularimage">
-                        <img
-                          src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
-                          alt=""
-                        />
-                      </div>
-                      <div className="pop">
-                        <div className="popular" style={{ display: "flex" }}>
-                          <h2 style={{ marginRight: "10px" }}>Rating: </h2>
-                          <h2>{movie.vote_average} &#11088;</h2>
+            <Zoom>
+              <h1>{Heading}</h1>
+            </Zoom>
+            <Slide direction="right">
+              <div className="movies">
+                <div className="popularmovies">
+                  {movies.map((movie) => (
+                    <div className="popularmovie">
+                      <Link
+                        to={`/${movie.id}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="popularimage">
+                          <img
+                            src={`${process.env.REACT_APP_IMAGE_URL}/${movie.poster_path}`}
+                            alt=""
+                          />
                         </div>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
+                        <div className="pop">
+                          <div className="popular" style={{ display: "flex" }}>
+                            <h2 style={{ marginRight: "10px" }}>Rating: </h2>
+                            <h2>{movie.vote_average} &#11088;</h2>
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </Slide>
           </div>
         </>
       )}
