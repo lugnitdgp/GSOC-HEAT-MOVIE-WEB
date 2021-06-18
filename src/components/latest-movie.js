@@ -51,7 +51,7 @@ const Latest = (props) => {
             <Zoom>
               <h1>{Heading}</h1>
             </Zoom>
-            <Slide direction="right">
+            <Slide direction="slide" cascade={true}>
               <div className="movies">
                 <div className="popularmovies">
                   {movies.map((movie) => (
