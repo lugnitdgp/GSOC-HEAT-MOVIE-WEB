@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
+import { Slide, Fade } from "react-awesome-reveal";
 
 const Details = () => {
   const { id } = useParams();
@@ -73,7 +73,7 @@ const Details = () => {
                   />
                 </div>
               </Slide>
-              <Slide direction="right">
+              <Fade direction="top">
                 <div className="align">
                   <div className="details">
                     <div className="detailstitle">
@@ -113,7 +113,7 @@ const Details = () => {
                     </div>
                   </div>
                 </div>
-              </Slide>
+              </Fade>
             </div>
 
             <div className="vide">
