@@ -122,15 +122,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.35),
     },
     marginLeft: 0,
-    // width: "50%",
-    // [theme.breakpoints.down("lg")]: {
-    //   marginLeft: theme.spacing(1),
-    //   width: "0%",
-    // },
-    // [theme.breakpoints.up("md")]: {
-    //   marginLeft: theme.spacing(1),
-    //   width: "10%",
-    // },
     [theme.breakpoints.down("sm")]: {
       marginLeft: theme.spacing(1),
       width: "40%",
@@ -188,8 +179,6 @@ export default function SearchAppBar() {
 
   const submit = (e) => {
     e.preventDefault();
-    // window.location.href = "/search";
-    // <Link to="/search"></Link>;
   };
   console.log(submit);
   // console.log(text);
@@ -369,7 +358,6 @@ export default function SearchAppBar() {
                   inputProps={{ "aria-label": "search" }}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  // onClick={() => (window.location.href = "/search")}
                 />
               </div>
             </div>

@@ -8,7 +8,7 @@ const List = (props) => {
   const u = props.u;
   const link = props.link;
   var Heading = "heading";
-  const url = `${process.env.REACT_APP_MOVIE_URL}/${u}${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+  const url = `${process.env.REACT_APP_MOVIE_URL}/${u}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 

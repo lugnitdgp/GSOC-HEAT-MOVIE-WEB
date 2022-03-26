@@ -33,6 +33,8 @@ npm install
 
 - create .env file and fill it up with required values from .env.example
 
+- Replace <Enter your api key here> in the .env with the api key generated from [tmdb site](https://www.themoviedb.org/settings/apis).
+
 - Run the development Server
 
 ```
