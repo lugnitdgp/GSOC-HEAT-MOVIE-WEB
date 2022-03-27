@@ -1,4 +1,4 @@
-# MOVIE APP
+# GSOC-HEAT-MOVIE-WEB
 # <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"></img> <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"></img> <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"></img>
 
 ## FRONTEND
@@ -34,7 +34,7 @@ npm install
 
 - create .env file and fill it up with required values from .env.example
 
-- Replace <Enter your api key here> in the .env with the api key generated from [tmdb site](https://www.themoviedb.org/settings/apis).
+- Replace 'Enter your api key here' in the .env with the api key generated from [tmdb site](https://www.themoviedb.org/settings/apis).
 
 - Run the development Server
 
