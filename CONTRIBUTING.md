@@ -9,7 +9,7 @@ have a reference to an issue.**
 ### Making your your first pull request
 
 - First, fork this repository
-- Clone it using ``` git clone https://github.com/lugnitdgp/GSOC-HEAT-MOVIE-WEB.git ```
+- Clone the forked repository
 - It is always recommended to make your changes in a new branch rather than master.
   So create a new branch using ``` git branch mybug ```
 - Checkout into your new branch using ``` git checkout mybug ```
