@@ -69,6 +69,7 @@ const Latest = (props) => {
                         </div>
                         <div className="pop">
                           <div className="popular" style={{ display: "flex" }}>
+                            <h2 className="txt" style={{ marginRight: "10px" }}>{movie.title}  |</h2>
                             <h2   className="txt" style={{ marginRight: "10px" }}>Rating: </h2>
                             <h2  className="txt" >{movie.vote_average} &#11088;</h2>
                           </div>
