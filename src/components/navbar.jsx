@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   search: {
-    // backdropFilter: "blur(7px)",
+    //backdropFilter: "blur(7px)",
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.45),
@@ -241,7 +241,7 @@ export default function SearchAppBar() {
                   key="Home"
                   onClick={() => (window.location.href = "/")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Home"
                   />
@@ -251,7 +251,7 @@ export default function SearchAppBar() {
                   key="Trending"
                   onClick={() => (window.location.href = "/trending")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Trending"
                   />
@@ -261,7 +261,7 @@ export default function SearchAppBar() {
                   key="Popular"
                   onClick={() => (window.location.href = "/popular")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Popular"
                   />
@@ -271,7 +271,7 @@ export default function SearchAppBar() {
                   key="Upcoming"
                   onClick={() => (window.location.href = "/upcoming")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Upcoming"
                   />
@@ -281,7 +281,7 @@ export default function SearchAppBar() {
                   key="Top Rated"
                   onClick={() => (window.location.href = "/top")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Top Rated"
                   />
@@ -291,7 +291,7 @@ export default function SearchAppBar() {
                   key="Now Playing"
                   onClick={() => (window.location.href = "/nowplaying")}
                 >
-                  <ListItemText
+                  <ListItemText className="txt"
                     classes={{ primary: classes.listItemText }}
                     primary="Now Playing"
                   />
@@ -305,35 +305,35 @@ export default function SearchAppBar() {
                 variant="h4"
                 onClick={() => (window.location.href = "/")}
               >
-                Home
+                <div className="txt">Home</div>
               </Typography>
               <Typography
                 className={classes.title}
                 variant="h4"
                 onClick={() => (window.location.href = "/trending")}
               >
-                Trending
+                <div className="txt">Trending</div>
               </Typography>
               <Typography
                 className={classes.title}
                 variant="h4"
                 onClick={() => (window.location.href = "/popular")}
               >
-                Popular
+                <div className="txt">Popular</div>
               </Typography>
               <Typography
                 className={classes.title}
                 variant="h4"
                 onClick={() => (window.location.href = "/upcoming")}
               >
-                Upcoming
+                <div className="txt">Upcoming</div>
               </Typography>
               <Typography
                 className={classes.title}
                 variant="h4"
                 onClick={() => (window.location.href = "/top")}
               >
-                Top Rated
+                <div className="txt">Top Rated</div>
               </Typography>
               <Typography
                 className={classes.title}
@@ -341,16 +341,17 @@ export default function SearchAppBar() {
                 style={{ width: "50%" }}
                 onClick={() => (window.location.href = "/nowplaying")}
               >
-                Now Playing
+                <div className="txt">Now Playing</div>
               </Typography>
             </Hidden>
             <div className={classes.searches}>
               <div className={classes.search} search>
                 <div className={classes.searchIcon}>
-                  <SearchIcon />
+                  <SearchIcon className="txt"/>
                 </div>
                 <InputBase
                   placeholder="Search…"
+                  className="txt"
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
@@ -364,7 +365,7 @@ export default function SearchAppBar() {
           </Toolbar>
         </AppBar>
         {text !== "" ? (
-          <div className="">
+          <div>
             <Search movies={movies} />
           </div>
         ) : (
