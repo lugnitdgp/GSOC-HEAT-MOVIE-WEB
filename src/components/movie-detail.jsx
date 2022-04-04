@@ -81,6 +81,9 @@ const Details = () => {
                     </div>
 
                     <div className="desc">
+                      <div className="detailstagline">
+                        <h1>{movie.tagline}</h1>
+                      </div>
                       <div className="detailsdesc">
                         <h2>{movie.overview}</h2>
                       </div>

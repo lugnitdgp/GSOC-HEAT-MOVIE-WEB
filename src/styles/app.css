@@ -426,6 +426,12 @@ h2 {
   font-family: "Overlock";
   letter-spacing: 0.75px;
 }
+.detailstagline h1 {
+  line-height: 40px;
+  font-weight: 600;
+  font-family: "Overlock";
+  letter-spacing: 0.75px;
+}
 .detailsrating {
   width: fit-content;
   display: flex;
@@ -785,6 +791,10 @@ font-weight: 600;
     margin-top: 0px;
     line-height: 30px;
   }
+  .detailstagline {
+    margin-top: 0px;
+    line-height: 40px;
+  }
   .details h2 {
     font-size: 20px;
   }
@@ -871,6 +881,15 @@ font-weight: 600;
     align-items: flex-start;
   }
   .detailsdesc {
+    margin-left: -120px;
+    width: 90vw;
+    height: 50%;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .detailstagline {
     margin-left: -120px;
     width: 90vw;
     height: 50%;
