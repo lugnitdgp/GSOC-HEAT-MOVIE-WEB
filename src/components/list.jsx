@@ -25,19 +25,19 @@ const List = (props) => {
   console.log(movies);
 
   if (u === "popular") {
-    Heading = "Popular";
+    Heading = <div className="txt">Popular</div>;
   } else if (u === "upcoming") {
-    Heading = "Upcoming";
+    Heading = <div className="txt">Upcoming</div>;
   } else if (u === "top_rated") {
-    Heading = "Top Rated";
+    Heading = <div className="txt">Top Rated</div>;
   } else if (u === "now_playing") {
-    Heading = "Now Playing";
+    Heading = <div className="txt">Now Playing</div>;
   }
   return (
     <>
       {loading ? (
         <div className="loader">
-          <h1>Loading...</h1>
+          <h1 className="txt">Loading...</h1>
         </div>
       ) : (
     <>
@@ -46,7 +46,7 @@ const List = (props) => {
         <div className="space">
           <Link to={link} style={{ textDecoration: "none" }}>
             <div className="next">
-              <h3>Explore all &raquo;</h3>
+              <h3 className="txt">Explore all &raquo;</h3>
               {/* <p className="arrow right"></p> */}
             </div>
           </Link>
