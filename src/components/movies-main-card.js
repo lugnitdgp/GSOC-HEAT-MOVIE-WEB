@@ -78,7 +78,7 @@ const Bigcard = () => {
                   className="maincard"
                   onClick={() => (window.location.href = `/${movie.id}`)}
                 >
-                  <h1>{movie.original_title}</h1>
+                  <h1 >{movie.original_title}</h1>
                   {movie.overview.length >= 203 ? (
                     <h2 className="overview">
                       {movie.overview.slice(0, 203)}........
@@ -88,8 +88,8 @@ const Bigcard = () => {
                   )}
                   {/* <h2 className="overview">{movie.overview.slice(0, 200)}</h2> */}
                   <div className="rating" style={{ display: "flex" }}>
-                    <h2 style={{marginRight: "5px" }}>Rating: </h2>
-                    <h2>{movie.vote_average} &#11088;</h2>
+                    <h2  style={{marginRight: "5px" }}>Rating: </h2>
+                    <h2 >{movie.vote_average} &#11088;</h2>
                   </div>
                 </div>
               </div>

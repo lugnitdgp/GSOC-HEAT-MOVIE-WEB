@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Slide, Zoom } from "react-awesome-reveal";
 
 const Latest = (props) => {
+
   const u = props.u;
   var Heading = "heading";
   var url = "url";
@@ -29,27 +30,27 @@ const Latest = (props) => {
   console.log(movies);
 
   if (u === "popular") {
-    Heading = "Popular";
+    Heading = <div  className="txt">Popular</div>
   } else if (u === "upcoming") {
-    Heading = "Upcoming";
+    Heading = <div  className="txt">Upcoming</div>
   } else if (u === "top_rated") {
-    Heading = "Top Rated";
+    Heading = <div  className="txt">Top Rated</div>
   } else if (u === "now_playing") {
-    Heading = "Now Playing";
+    Heading = <div  className="txt">Now Playing</div>
   } else if (u === "trending") {
-    Heading = "Trending";
+    Heading = <div  className="txt">Trending</div>
   }
   return (
     <>
       {loading ? (
         <div className="loader">
-          <h2>Loading...</h2>
+          <h2  className="txt">Loading...</h2>
         </div>
       ) : (
         <>
           <div className="moviesmain">
             <Zoom>
-              <h1>{Heading}</h1>
+              <h1 >{Heading}</h1>
             </Zoom>
             <Slide direction="slide" cascade={true}>
               <div className="movies">
@@ -68,8 +69,9 @@ const Latest = (props) => {
                         </div>
                         <div className="pop">
                           <div className="popular" style={{ display: "flex" }}>
-                            <h2 style={{ marginRight: "10px" }}>Rating: </h2>
-                            <h2>{movie.vote_average} &#11088;</h2>
+                            <h2 className="txt" style={{ marginRight: "10px" }}>{movie.title}  |</h2>
+                            <h2   className="txt" style={{ marginRight: "10px" }}>Rating: </h2>
+                            <h2  className="txt" >{movie.vote_average} &#11088;</h2>
                           </div>
                         </div>
                       </Link>
@@ -81,7 +83,7 @@ const Latest = (props) => {
           </div>
         </>
       )}
-      ;
+      
     </>
   );
 };
